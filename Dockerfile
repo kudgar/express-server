@@ -12,7 +12,8 @@ COPY package*.json ./
 
 RUN npm install --production
 
-COPY . .
+# Копируются только необходимые файлы
+COPY app.js ./
 
 EXPOSE 3000
 
