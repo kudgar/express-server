@@ -1,1 +1,9 @@
 # The plain server on express.js
+
+```
+docker build --build-arg APP_DIR=var/app -t express-server:v1 .
+```
+
+```
+docker run -p 8000:3000 -d --name node-app express-server:v1
+```

@@ -1,7 +1,19 @@
-FROM node
-LABEL maintainer kudgar@yandex.ru
-RUN git clone -q https://github.com/kudgar/express-server.git
-WORKDIR /express-server
-RUN npm install
+FROM node:18
+
+# Папка приложения
+ARG APP_DIR=app
+
+RUN mkdir -p ${APP_DIR}
+
+WORKDIR ${APP_DIR}
+
+# Установка зависимостей
+COPY package*.json ./
+
+RUN npm install --production
+
+COPY . .
+
 EXPOSE 3000
-CMD ["node", "app.js"]
+
+CMD ["npm", "start"]
