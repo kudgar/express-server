@@ -1,0 +1,8 @@
+version: '3.9'
+
+services:
+  server:
+    image: express-server:v1
+    attach: false
+    ports:
+      - 3000:3000
