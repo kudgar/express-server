@@ -9,5 +9,5 @@ docker run -p 8000:3000 -d --name node-app express-server:v1
 ```
 
 ```
-docker-compose up -d
+docker compose up -d
 ```

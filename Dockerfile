@@ -15,6 +15,4 @@ RUN npm install --production
 # Копируются только необходимые файлы
 COPY app.js ./
 
-EXPOSE 3000
-
 CMD ["npm", "start"]
